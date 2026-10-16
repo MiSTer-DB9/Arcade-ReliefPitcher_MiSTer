@@ -73,8 +73,9 @@ All controller buttons can be remapped in the MiSTer menu.
 ## OSD options
 
 - **Aspect ratio**, **Orientation** (Flip) and **Scale** set the picture.
-- **Analog alignment** moves and resizes the picture on CRTs and analogue
-  VGA outputs.
+- **CRT Adjust** moves and resizes the picture on CRTs and analogue VGA
+  outputs: H-Size, H-Position and V-Shift. Off leaves the picture untouched.
+  It is unavailable while the scandoubler is forced on.
 - **Service** is the cabinet's self-test switch. Turn it on to enter the
   game's test menu and off to leave it.
 
@@ -117,8 +118,8 @@ the release.
   second YM2413 reference used while testing.
 - **Alexey Melnikov (Sorgelig)** and the MiSTer-devel community: the
   [MiSTer framework](https://github.com/MiSTer-devel/Template_MiSTer).
-- **Umberto Parisi (rmonic79)**: `analog_hsize.sv`, from
-  [Arcade-Raiden_MiSTer](https://github.com/rmonic79/Arcade-Raiden_MiSTer).
+- **Umberto Parisi (rmonic79)**: `crt_adjust.sv`, from
+  [MiSTer-CRT-Adjust](https://github.com/rmonic79/MiSTer-CRT-Adjust).
 - **RetroShrimp**: this core, and the YM2413 bus adapter from the
   [Rampart](https://github.com/MiSTer-devel/Arcade-Rampart_MiSTer) MiSTer
   core.
@@ -144,7 +145,7 @@ keep their own licences and notices:
 | `rtl/lib/fx68k/` | Jorge Cwik | GPL-3.0 |
 | `rtl/lib/ikaopll/` | Sehyeon Kim (Raki) | BSD-2-Clause |
 | `rtl/lib/oki/` | Klax MiSTer core authors | GPL-2.0-or-later |
-| `rtl/video/analog_hsize.sv` | Umberto Parisi | GPL-3.0-or-later |
+| `rtl/video/crt_adjust.sv` | Umberto Parisi | GPL-3.0-or-later |
 | `sys/` | Alexey Melnikov and contributors | GPL-2.0-or-later / GPL-3.0-or-later |
 
 `NOTICE.md` lists the cores this one builds on. Keep `LICENSE`, `NOTICE.md`
