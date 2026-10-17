@@ -73,8 +73,9 @@ All controller buttons can be remapped in the MiSTer menu.
 ## OSD options
 
 - **Aspect ratio**, **Orientation** (Flip) and **Scale** set the picture.
-- **Analog alignment** moves and resizes the picture on CRTs and analogue
-  VGA outputs.
+- **CRT Adjust** moves and resizes the picture on CRTs and analogue VGA
+  outputs: H-Size, H-Position and V-Shift. Off leaves the picture untouched.
+  It is unavailable while the scandoubler is forced on.
 - **Service** is the cabinet's self-test switch. Turn it on to enter the
   game's test menu and off to leave it.
 
@@ -103,8 +104,53 @@ written to `output_files/ReliefPitcher.rbf`. Add new source files to
 into the bitstream, so a build made on another day is not byte-identical to
 the release.
 
-## License
+## Credits
 
-GPL-3.0-or-later; see LICENSE. NOTICE.md lists the cores and libraries this
-one builds on. Keep LICENSE, NOTICE.md and the bundled third-party licences
-when redistributing.
+- **Atari Games**: the original hardware and game.
+- **The [MAME](https://github.com/mamedev/mame) team**: `relief.cpp`
+  (Aaron Giles), `atarivad`, `atarimo`, `okim6295` and `ymfm`, the
+  reference for everything the schematics and GALs do not settle.
+- **Jorge Cwik (ijor)**: the [fx68k](https://github.com/ijor/fx68k) 68000
+  core.
+- **Sehyeon Kim (Raki)**: the [IKAOPLL](https://github.com/ika-musume/IKAOPLL)
+  YM2413 core.
+- **Nuke.YKT**: [Nuked-OPLL](https://github.com/nukeykt/Nuked-OPLL), a
+  second YM2413 reference used while testing.
+- **Alexey Melnikov (Sorgelig)** and the MiSTer-devel community: the
+  [MiSTer framework](https://github.com/MiSTer-devel/Template_MiSTer).
+- **Umberto Parisi (rmonic79)**: `crt_adjust.sv`, from
+  [MiSTer-CRT-Adjust](https://github.com/rmonic79/MiSTer-CRT-Adjust).
+- **RetroShrimp**: this core, and the YM2413 bus adapter from the
+  [Rampart](https://github.com/MiSTer-devel/Arcade-Rampart_MiSTer) MiSTer
+  core.
+- The authors of the MiSTer cores whose CPU wrapper, SDRAM controller and
+  loader, VAD and MOB video models, MSM6295 model and MiSTer glue this core
+  builds on:
+  [Batman](https://github.com/MiSTer-devel/Arcade-Batman_MiSTer),
+  [Skull & Crossbones](https://github.com/MiSTer-devel/Arcade-SkullXBones_MiSTer),
+  [Klax](https://github.com/MiSTer-devel/Arcade-Klax_MiSTer),
+  [Bad Lands](https://github.com/MiSTer-devel/Arcade-Badlands_MiSTer),
+  [Vindicators](https://github.com/MiSTer-devel/Arcade-Vindicators_MiSTer),
+  [Blasteroids](https://github.com/MiSTer-devel/Arcade-Blasteroids_MiSTer),
+  [Xybots](https://github.com/MiSTer-devel/Arcade-Xybots_MiSTer) and
+  [Toobin'](https://github.com/MiSTer-devel/Arcade-Toobin_MiSTer).
+
+## Licence
+
+The combined work is GPL-3.0-or-later; see `LICENSE`. Bundled components
+keep their own licences and notices:
+
+| Component | Author | Licence |
+| --- | --- | --- |
+| `rtl/lib/fx68k/` | Jorge Cwik | GPL-3.0 |
+| `rtl/lib/ikaopll/` | Sehyeon Kim (Raki) | BSD-2-Clause |
+| `rtl/lib/oki/` | Klax MiSTer core authors | GPL-2.0-or-later |
+| `rtl/video/crt_adjust.sv` | Umberto Parisi | GPL-3.0-or-later |
+| `sys/` | Alexey Melnikov and contributors | GPL-2.0-or-later / GPL-3.0-or-later |
+
+`NOTICE.md` lists the cores this one builds on. Keep `LICENSE`, `NOTICE.md`
+and the bundled licences when redistributing.
+
+*Relief Pitcher* is a trademark of its respective owner. This is an
+unaffiliated preservation project and contains no ROM data. Use it only
+with ROMs you are legally entitled to.
