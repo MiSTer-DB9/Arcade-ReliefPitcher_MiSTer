@@ -31,8 +31,10 @@ All three revisions run on the same bitstream; only the program ROMs differ.
 
 ## Installing
 
-1. Copy `releases/ReliefPitcher_<date>.rbf` to `_Arcade/cores/`. Keep only
-   one `ReliefPitcher_*.rbf` there; the MRAs match any of them.
+1. Copy `releases/Arcade-ReliefPitcher_<date>.rbf` to `_Arcade/cores/` and
+   remove `Arcade-` from its name, giving `ReliefPitcher_<date>.rbf`. The
+   MiSTer update tools do this for you. Keep only one `ReliefPitcher_*.rbf`
+   there; the MRAs match any of them.
 2. Copy `releases/Relief Pitcher.mra` to `_Arcade/`. For the older
    revisions, copy the `releases/_alternatives` folder to
    `_Arcade/_alternatives`.
